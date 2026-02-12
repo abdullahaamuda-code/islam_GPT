@@ -2,7 +2,8 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-        "build": "vite build && mkdir -p dist && cp -r public/build/* dist/ || true"
+        "build": "vite build && mkdir -p dist && cp -r public/build/. dist/ 2>/dev/null || echo 'Copy failed, checking public/build'; ls -la public/build || echo 'No public/build'; ls -la dist || echo 'No dist created'"
+
     },
     "devDependencies": {
         "@vitejs/plugin-vue": "^4.1.0",
